@@ -1,8 +1,3 @@
-Here’s your **well-structured, clean, copy-paste-ready** `README.md` for your GitHub portfolio website:
-
----
-
-````markdown
 # ⚡️ Gowthama T - Data Analyst Portfolio
 
 A **clean**, **beautiful**, and **responsive portfolio website** made using only **HTML**, **CSS**, and **JavaScript** for showcasing Data Analytics skills.
@@ -57,12 +52,8 @@ Clone this repo:
 git clone https://github.com/Gowthama-T/portfolio-website.git
 cd portfolio-website
 code .
-````
 
-* Open `index.html` in your browser to view the portfolio.
-* Edit content using any text editor.
 
----
 
 ## 🎨 Customization
 
@@ -167,9 +158,5 @@ If you have questions, feel free to contact:
 
 ```
 
----
 
-✅ You can now just paste this into your `README.md` file on GitHub and it will show up formatted with emojis, bold text, links, and code blocks!
-
-Let me know if you want to add a screenshot section or badges!
 ```
