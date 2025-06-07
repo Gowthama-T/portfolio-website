@@ -1,7 +1,9 @@
 # portfolio-website
 
 Gowthama T - Data Analyst Portfolio ⚡️
+
 A clean, beautiful, and responsive portfolio template for Data Analysts!
+
 Customize your personal portfolio by editing the HTML, CSS, and JavaScript directly in the provided files. Adjust the theme by modifying colors, fonts, and styles in the <style> section of the HTML file. Feel free to use it as-is or personalize it to suit your needs.
 If you'd like to contribute and improve this for other users, check out the Issues section.
 Created something awesome with your fork of this portfolio? Feel free to open a pull request to share it!
