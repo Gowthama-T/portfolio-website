@@ -147,9 +147,6 @@ GitHub: [Gowthama-T](https://github.com/Gowthama-T)
 
 ---
 
-## 📬 Contact
-
-If you have questions, feel free to contact:
 
 ## 📬 Contact
 
