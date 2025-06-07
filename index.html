@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gowthama T - Data Analyst Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #263238;
+      overflow-x: hidden;
+      margin: 0;
+    }
+    .section {
+      scroll-margin-top: 80px;
+      padding: 5rem 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Section Title */
+    .section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out 0.3s forwards;
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
+    }
+    .section-title:hover {
+      transform: scale(1.05);
+      text-shadow: 0 0 10px rgba(255, 110, 64, 0.5);
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      width: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #ff6e40, #ffd700);
+      transform: translateX(-50%);
+      animation: underlineGrow 1s ease-out 0.5s forwards;
+    }
+    /* Navbar */
+    .navbar {
+      background: #1a237e;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    .nav-link {
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #ff6e40;
+      transform: translateY(-2px);
+    }
+    /* Home */
+    .home-bg {
+      background: linear-gradient(135deg, #1a237e, #4a148c);
+      animation: gradientShift 15s ease-in-out infinite;
+    }
+    .particle-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Ccircle cx="10" cy="10" r="1" fill="%23ffffff" fill-opacity="0.3"/%3E%3Ccircle cx="90" cy="20" r="1.5" fill="%23ffffff" fill-opacity="0.4"/%3E%3Ccircle cx="30" cy="80" r="1" fill="%23ffffff" fill-opacity="0.3"/%3E%3Ccircle cx="70" cy="60" r="2" fill="%23ffffff" fill-opacity="0.2"/%3E%3C/svg%3E');
+      animation: particleMove 20s linear infinite;
+      z-index: 1;
+      opacity: 0.4;
+    }
+    .home-content {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease-out 0.5s forwards;
+      z-index: 10;
+    }
+    .home-content h1 {
+      animation: slideInLeft 1s ease-out 0.7s forwards;
+      color: #ffffff;
+    }
+    .home-content p:nth-child(2) {
+      animation: slideInRight 1s ease-out 0.9s forwards;
+      color: #ffffff;
+    }
+    .home-content p:nth-child(3) {
+      animation: fadeIn 1s ease-out 1.1s forwards;
+      color: #ffffff;
+    }
+    .home-content a {
+      animation: bounceIn 1s ease-out 1.3s forwards;
+      background: #1a237e;
+      color: #ffffff;
+    }
+    .home-content a:hover {
+      background: #ff6e40;
+    }
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      background: #1a237e;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      z-index: 20;
+    }
+    .logo.fixed {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+    }
+    .email-sidebar {
+      position: fixed;
+      top: 80px;
+      left: 20px;
+      opacity: 0;
+      transform: translateX(-100px);
+      transition: all 0.5s ease;
+      z-index: 20;
+    }
+    .email-sidebar.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .email-sidebar a {
+      color: #1a237e;
+      background: #ffffff;
+      padding: 8px 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .email-sidebar a:hover {
+      background: #ff6e40;
+      color: #ffffff;
+    }
+    .email-sidebar svg {
+      width: 18px;
+      height: 18px;
+      margin-right: 6px;
+      fill: #1a237e;
+    }
+    .email-sidebar a:hover svg {
+      fill: #ffffff;
+    }
+    .social-sidebar {
+      position: fixed;
+      top: 80px;
+      right: 20px;
+      opacity: 0;
+      transform: translateX(100px);
+      transition: all 0.5s ease;
+      z-index: 20;
+    }
+    .social-sidebar.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .social-sidebar a {
+      display: block;
+      margin-bottom: 12px;
+      background: #ffffff;
+      padding: 8px;
+      border-radius: 50%;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .social-sidebar a:hover {
+      transform: scale(1.1);
+      background: #ff6e40;
+    }
+    .social-sidebar svg {
+      width: 20px;
+      height: 20px;
+      fill: #1a237e;
+    }
+    .social-sidebar a:hover svg {
+      fill: #ffffff;
+    }
+    /* Cards */
+    .card, .tool-card, .project-card {
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      padding: 1.5rem;
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    .card:hover, .tool-card:hover, .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+    .tool-card {
+      position: relative;
+    }
+    .tool-icon {
+      width: 56px;
+      height: 56px;
+      background: #e0e0e0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.75rem;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .tool-card:hover .tool-icon {
+      background: #ff6e40;
+      transform: scale(1.1);
+    }
+    .tool-name {
+      font-size: 1rem;
+      color: #263238;
+      text-align: center;
+    }
+    /* Postcard */
+    .postcard {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+      margin: 0 auto;
+      transition: transform 0.3s ease;
+    }
+    .postcard:hover {
+      transform: scale(1.02);
+    }
+    .postcard-header {
+      background: flex;
+      justify-content: #1a237e;
+      color: #2e4;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .postcard-header h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    .postcard-body {
+      padding: 1.5rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    .contact-item:nth-child(2) { animation-delay: 0.2s; }
+    .contact-item:nth-child(3) { animation-delay: 0.4s; }
+    .contact-item:nth-child(4) { animation-delay: 0.6s; }
+    .contact-item:nth-child(5) { animation-delay: 0.8s; }
+    .contact-item svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 0.75rem;
+      fill: #1a237e;
+      transition: fill 0.3s ease, transform 0.3s ease;
+    }
+    .contact-item:hover svg {
+      background: #ff6e40;
+      transform: scale(1.2);
+    }
+    .contact-item a {
+      color: #1a237e;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .contact-item a:hover {
+      color: #ff6e40;
+    }
+    }
+    /* Footer */
+    .footer {
+      background: #0a1128;
+      color: #ffffff;
+      padding: 2rem 1rem;
+    }
+    /* Animations */
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes bounceIn {
+      0% { opacity: 0; transform: scale(0.5); }
+      50% { opacity: 1; transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    @keyframes underlineGrow {
+      to { width: 100px; }
+    }
+    @keyframes particleMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 100px; }
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    /* Section-Specific Styles */
+    #about { background: #e0f7fa; }
+    #about .section-title { color: #006451; }
+    #experience { background: #f5f5f5; }
+    #experience .section-title { color: #37474f; }
+    #skills { background: #ffe5e0; }
+    #skills .section-title { color: #d81b60; }
+    #education { background: #f3e5f5; }
+    #education .section-title { color: #6a1b9a; }
+    #certifications { background: #fafafa; }
+    #certifications .section-title { color: #2e7d32; }
+    #projects { background: #e3f2fd; }
+    #projects .section-title { color: #1565c0; }
+    #contact { background: #e1f5fe; }
+    #contact .section-title { color: #0277bd; }
+    /* Responsive */
+    @media (max-width: 640px) {
+      .section { padding: 4rem 0.5rem; }
+      .section-title { font-size: 2rem; }
+      .home-content h1 { font-size: 2.5rem; }
+      .home-content p { font-size: 1rem; }
+      .logo { width: 40px; height: 40px; font-size: 1.2rem; }
+      .email-sidebar { top: 70px; }
+      .email-sidebar a { font-size: 0.85rem; padding: 6px 10px; }
+      .social-sidebar { top: 70px; }
+      .social-sidebar a { padding: 6px; }
+      .social-sidebar svg { width: 18px; height: 18px; }
+      .postcard-header h2 { font-size: 1.5rem; }
+      .postcard-body { padding: 1rem; }
+      .contact-item { font-size: 0.9rem; }
+      .tool-name { font-size: 0.9rem; }
+      .card, .tool-card, .project-card { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar text-white fixed w-full top-0 z-50">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <h1 class="text-2xl font-bold font-poppins">Gowthama T</h1>
+        <ul class="flex space-x-4">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#certifications" class="nav-link">Certifications</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+  <main>
+    <!-- Home -->
+    <section id="home" class="section min-h-screen flex items-center justify-center home-bg text-white relative">
+      <div class="particle-bg"></div>
+      <div class="logo" id="logo">GT</div>
+      <div class="container mx-auto px-4 text-center home-content">
+        <h1 class="text-5xl font-bold mb-4 font-poppins">Hi, I'm Gowthama T!</h1>
+        <p class="text-2xl mb-6">Google Certified Business Intelligence & Data Analyst</p>
+        <p class="text-lg mb-8">Turning "UH-OH" into "AHA!" with data insights</p>
+        <a href="#contact" class="px-6 py-3 rounded-full font-semibold">Get in Touch</a>
+      </div>
+      <div class="email-sidebar" id="emailSidebar">
+        <a href="mailto:gowthamat634@gmail.com">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          gowthamat634@gmail.com
+        </a>
+      </div>
+      <div class="social-sidebar" id="socialSidebar">
+        <a href="https://www.linkedin.com/in/gowthama-t-281b3b285" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.1-4-1.1 0-.5-.2-1.9-.6-2.7.4-.1.9-1.3 0-1.3 0 0 .8-.1 1.7.6.5.2.9.5 1.3.8.4.2.9.4 1.3.4.6-.4 1.3-.9 2-1.2-.7-.7-1.7-.9-2.9-.9 0-.3.1-.7.3-1 .6-.6 1.8-.7 2.9-.4v-1.2c0-.2.1-.4.4-.5 1.3-.3 2.8-.3 4.3 0 .3.1.4.3.4.5v1.2c1.1-.3 2.3-.2 2.9.4.2.3.3.7.3 1-.7.3-1.4.5-2.9.9.7.3 1.3.8 2 1.2.4 0 .9-.2 1.3-.4.4-.3.8-.6 1.3-.8.9-.7 1.7-.6 1.7.6 0 .9-.5 1.3-.1 1.3-.4.8-.6 1.6-.6 2.7 0 1-.7 3.1 4 1.1v2.1c0 .3.2.7.8.6A12.13 12.13 0 0 0 12 .3z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/gowthama-t" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.79z"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <h2 class="section-title" style="color: #006064;">About Me</h2>
+      <div class="container mx-auto px-4">
+        <div class="card max-w-3xl mx-auto">
+          <p class="text-lg text-center">
+            I'm Gowthama T, a passionate data analyst with a knack for uncovering insights that drive decisions. With expertise in business intelligence and data analytics, I specialize in transforming complex data into actionable strategies. My journey includes freelancing, academic excellence, and hands-on projects in web development and data visualization.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <h2 class="section-title" style="color: #37474f;">Experience</h2>
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="card">
+            <svg class="w-8 h-8 text-1a237e mb-4 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-10a2 2 0 1 0 2 2 2 2 0 0 0-2-2z"/></svg>
+            <h3 class="text-lg font-semibold mb-2 text-center">Freelance Data Analyst</h3>
+            <p class="text-center">Crafted data-driven solutions for clients, leveraging tools like Tableau and Python.</p>
+          </div>
+          <div class="card" style="animation-delay: 0.2s;">
+            <svg class="w-8 h-8 text-1a237e mb-4 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h16v2H4zm0 4h16v12H4zm2 2v8h12v-8zm2 2h8v4H8z"/></svg>
+            <h3 class="text-lg font-semibold mb-2 text-center">Data Analytics Student</h3>
+            <p class="text-center">Honed skills in SQL, Excel, and data visualization through rigorous coursework.</p>
+          </div>
+          <div class="card" style="animation-delay: 0.4s;">
+            <svg class="w-8 h-8 text-1a237e mb-4 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm1-13h-2v6H7v2h6z"/></svg>
+            <h3 class="text-lg font-semibold mb-2 text-center">Web Development Intern</h3>
+            <p class="text-center">Developed an e-commerce platform with HTML, CSS, JS, and payment APIs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <h2 class="section-title" style="color: #d81b60;">Skills</h2>
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div class="tool-card">
+            <div class="tool-icon">📊</div>
+            <span class="tool-name">Tableau</span>
+          </div>
+          <div class="tool-card" style="animation-delay: 0.2s;">
+            <div class="tool-icon">🐍</div>
+            <span class="tool-name">Python</span>
+          </div>
+          <div class="tool-card" style="animation-delay: 0.4s;">
+            <div class="tool-icon">📈</div>
+            <span class="tool-name">Excel</span>
+          </div>
+          <div class="tool-card" style="animation-delay: 0.6s;">
+            <div class="tool-icon">🗄️</div>
+            <span class="tool-name">SQL</span>
+          </div>
+          <div class="tool-card" style="animation-delay: 0.8s;">
+            <div class="tool-icon">📋</div>
+            <span class="tool-name">Power BI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section">
+      <h2 class="section-title" style="color: #6a1b9a;">Education</h2>
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="card">
+            <h3 class="text-lg font-semibold mb-2">SSLC</h3>
+            <p>Karnataka State Board<br>Completed. Acquired foundational knowledge in core subjects, preparing for advanced studies.</p>
+          </div>
+          <div class="card" style="animation-delay: 0.2s;">
+            <h3 class="text-lg font-semibold mb-2">PUC</h3>
+            <p>Karnataka State Board<br>Completed. Focused on science stream, building a strong academic base for technical education.</p>
+          </div>
+          <div class="card" style="animation-delay: 0.4s;">
+            <h3 class="text-lg font-semibold mb-2">BCA</h3>
+            <p>Davangere University<br>Completed. Specialized in computer applications, gaining skills in programming and data management.</p>
+          </div>
+          <div class="card" style="animation-delay: 0.6s;">
+            <h3 class="text-lg font-semibold mb-2">MCA</h3>
+            <p>Bangalore Institute of Technology<br>Currently Pursuing. Advancing expertise in computer science, data analytics, and software development.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications" class="section">
+      <h2 class="section-title" style="color: #2e7d32;">Certifications</h2>
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="card">
+            <h3 class="text-lg font-semibold mb-2">Cisco Data Analytics Essentials</h3>
+            <p>Completed August 15, 2023. Mastered data analytics processes, including data collection, transformation, and visualization using Excel, SQL, and Tableau. Built and shared a project portfolio.</p>
+            <a href="Gowthama_Cisco-1.pdf" download class="mt-4 inline-block bg-1a237e text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-ff6e40 transition-colors">Download Certificate</a>
+          </div>
+          <div class="card" style="animation-delay: 0.2s;">
+            <h3 class="text-lg font-semibold mb-2">Google Data Analytics</h3>
+            <p>Currently Pursuing. Developing expertise in deriving actionable insights from complex datasets through advanced analytics techniques.</p>
+          </div>
+          <div class="card" style="animation-delay: 0.4s;">
+            <h3 class="text-lg font-semibold mb-2">Professional Certifications</h3>
+            <p>Earned Cisco Data Analytics Essentials (2023) and actively pursuing Google Data Analytics to enhance professional skills in business intelligence and data-driven decision-making.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <h2 class="section-title" style="color: #1565c0;">Projects</h2>
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="project-card">
+            <div class="flex items-center mb-4">
+              <svg class="w-8 h-8 text-1a237e mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h18v18H3zm2 2v14h14V5zm2 2h10v10H7z"/></svg>
+              <h3 class="text-lg font-semibold">E-commerce Website</h3>
+            </div>
+            <p>Built a responsive e-commerce platform with HTML, CSS, JavaScript, and payment integration.</p>
+          </div>
+          <div class="project-card" style="animation-delay: 0.2s;">
+            <div class="flex items-center mb-4">
+              <svg class="w-8 h-8 text-1a237e mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm-2-12h4v8h-4z"/></svg>
+              <h3 class="text-lg font-semibold">Customer Segmentation</h3>
+            </div>
+            <p>Developed a data analytics dashboard using Python and Tableau for customer insights.</p>
+          </div>
+        </div>
+        <div class="text-center mt-8">
+          <a href="https://kas0380.github.io/Portfolio" class="bg-1a237e text-white px-6 py-3 rounded-full font-semibold hover:bg-ff6e40 transition-colors">Explore More Projects!</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <h2 class="section-title" style="color: #0277bd;">Contact</h2>
+      <div class="container mx-auto px-4">
+        <div class="postcard">
+          <div class="postcard-header">
+            <h2>Let's Connect!</h2>
+          </div>
+          <div class="postcard-body">
+            <div class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <span><strong>Location:</strong>Bangalore, India</span>
+            </div>
+            <div class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <span><strong>Email:</strong> gowthamat634@gmail.com</span>
+            </div>
+            <div class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm7 16H5V5h14v14z"/></svg>
+              <span><strong>Phone:</strong> +91 9164893804</span>
+            </div>
+            <div class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.79z"/></svg>
+              <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/gowthama-t-281b3b285">Let's connect!</a></span>
+            </div>
+            <div class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.1-4-1.1 0-.5-.2-1.9-.6-2.7.4-.1.9-1.3 0-1.3 0 0 .8-.1 1.7.6.5.2.9.5 1.3.8.4.2.9.4 1.3.4.6-.4 1.3-.9 2-1.2-.7-.7-1.7-.9-2.9-.9 0-.3.1-.7.3-1 .6-.6 1.8-.7 2.9-.4v-1.2c0-.2.1-.4.4-.5 1.3-.3 2.8-.3 4.3 0 .3.1.4.3.4.5v1.2c1.1-.3 2.3-.2 2.9.4.2.3.3.7.3 1-.7.3-1.4.5-2.9.9.7.3 1.3.8 2 1.2.4 0 .9-.2 1.3-.4.4-.3.8-.6 1.3-.8.9-.7 1.7-.6 1.7.6 0 .9-.5 1.3-.1 1.3-.4.8-.6 1.6-.6 2.7 0 1-.7 3.1 4 1.1v2.1c0 .3.2.7.8.6A12.13 12.13 0 0 0 12 .3z"/></svg>
+              <span><strong>GitHub:</strong> <a href="https://www.linkedin.com/in/gowthama-t-281b3b285">Explore More Projects!</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<footer class="footer bg-gradient-to-r from-blue-900 via-gray-800 to-blue-900 text-white py-6 animate-fade-in-up">
+  <div class="container mx-auto px-4 text-center space-y-2">
+    <p class="text-sm transition duration-300 hover:text-blue-400">
+      © 2025 Gowthama T. All Rights Reserved.
+    </p>
+    <p class="text-sm transition duration-300 hover:text-blue-400">
+      Designed by Gowthama T
+    </p>
+  </div>
+</footer>
+
+
+  <script>
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Scroll-based sidebars
+    window.addEventListener('scroll', () => {
+      const logo = document.querySelector('#logo');
+      const emailSidebar = document.querySelector('#emailSidebar');
+      const socialSidebar = document.querySelector('#socialSidebar');
+      const homeSection = document.querySelector('#home');
+      const homeBottom = homeSection.getBoundingClientRect().bottom;
+
+      if (homeBottom < 0) {
+        logo.classList.add('fixed');
+        emailSidebar.classList.add('visible');
+        socialSidebar.classList.add('visible');
+      } else {
+        logo.classList.remove('fixed');
+        emailSidebar.classList.remove('visible');
+        socialSidebar.classList.remove('visible');
+      }
+    });
+  </script>
+</body>
+</html>
