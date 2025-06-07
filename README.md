@@ -151,11 +151,17 @@ GitHub: [Gowthama-T](https://github.com/Gowthama-T)
 
 If you have questions, feel free to contact:
 
-* 📧 Email: [gowthamat634@gmail.com](mailto:gowthamat634@gmail.com)
-* 📱 Phone: +91 9164893804
-* 🔗 LinkedIn: Gowthama T
-* 💻 GitHub: [Gowthama-T](https://github.com/Gowthama-T)
+## 📬 Contact
 
+If you have questions, feel free to contact:
+
+- 📧 Email: gowthamat634@gmail.com  
+- 📱 Phone: +91 9164893804  
+- 🔗 LinkedIn: [Gowthama T](https://www.linkedin.com/in/gowthama-t-281b3b285)  
+- 💻 GitHub: [Gowthama-T](https://github.com/Gowthama-T)
+
+
+ Feel free to reach out for help or feedback!
 ```
 
 
