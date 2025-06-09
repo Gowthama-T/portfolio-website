@@ -4,9 +4,13 @@ A **clean**, **beautiful**, and **responsive portfolio website** made using only
 
 This template is fully customizable. You can edit the HTML file to add your projects, skills, certifications, and contact details.
 
+
+[Screenshot (6)](https://github.com/user-attachments/assets/2bb950bb-8b83-43fd-8468-e428ea128a96)
+
+
 ---
 
-## 📚 Table of Contents
+## 📚 Table of Contents!
 
 - Portfolio Sections  
 - Getting Started  
