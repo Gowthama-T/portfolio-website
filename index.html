@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gowthama T - Portfolio</title>
+  <title>Gowthama T - Data Analyst Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -47,22 +47,25 @@
       animation: underlineGrow 1s ease-out 0.5s forwards;
     }
     /* Education Cards */
-    .education-card {
-      background: #ffffff;
-      border: 1px solid #e0e0e0;
-      padding: 1.5rem;
-      border-radius: 12px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      opacity: 0;
-      animation: fadeInUp 0.6s ease-out forwards;
-    }
-    .education-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    }
-    .education-card strong {
-      color: #1a237e;
-    }
+.education-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.education-card strong {
+  color: #1a237e;
+}
+
     /* Navbar */
     .navbar {
       background: #1a237e;
@@ -263,8 +266,9 @@
       transform: scale(1.02);
     }
     .postcard-header {
-      background: #1a237e;
-      color: #ffffff;
+      background: flex;
+      justify-content: #1a237e;
+      color: #2e4;
       padding: 1.5rem;
       text-align: center;
     }
@@ -288,6 +292,7 @@
     .contact-item:nth-child(2) { animation-delay: 0.2s; }
     .contact-item:nth-child(3) { animation-delay: 0.4s; }
     .contact-item:nth-child(4) { animation-delay: 0.6s; }
+    .contact-item:nth-child(5) { animation-delay: 0.8s; }
     .contact-item svg {
       width: 20px;
       height: 20px;
@@ -296,7 +301,7 @@
       transition: fill 0.3s ease, transform 0.3s ease;
     }
     .contact-item:hover svg {
-      fill: #ff6e40;
+      background: #ff6e40;
       transform: scale(1.2);
     }
     .contact-item a {
@@ -306,6 +311,7 @@
     }
     .contact-item a:hover {
       color: #ff6e40;
+    }
     }
     /* Footer */
     .footer {
@@ -345,6 +351,8 @@
     /* Section-Specific Styles */
     #about { background: #e0f7fa; }
     #about .section-title { color: #006451; }
+    #experience { background: #f5f5f5; }
+    #experience .section-title { color: #37474f; }
     #skills { background: #ffe5e0; }
     #skills .section-title { color: #d81b60; }
     #education { background: #f3e5f5; }
@@ -383,6 +391,7 @@
         <ul class="flex space-x-4">
           <li><a href="#home" class="nav-link">Home</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#education" class="nav-link">Education</a></li>
           <li><a href="#certifications" class="nav-link">Certifications</a></li>
@@ -390,8 +399,7 @@
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </div>
-    </nav>
-  </header>
+    </header>
 
   <main>
     <!-- Home -->
@@ -400,8 +408,8 @@
       <div class="logo" id="logo">GT</div>
       <div class="container mx-auto px-4 text-center home-content">
         <h1 class="text-5xl font-bold mb-4 font-poppins">Hi, I'm Gowthama T!</h1>
-        <p class="text-2xl mb-6">MCA Student & Web Developer</p>
-        <p class="text-lg mb-8">Building responsive and user-friendly web solutions</p>
+        <p class="text-2xl mb-6">Google Certified Business Intelligence & Data Analyst</p>
+        <p class="text-lg mb-8">Turning "UH-OH" into "AHA!" with data insights</p>
         <a href="#contact" class="px-6 py-3 rounded-full font-semibold">Get in Touch</a>
       </div>
       <div class="email-sidebar" id="emailSidebar">
@@ -411,7 +419,7 @@
         </a>
       </div>
       <div class="social-sidebar" id="socialSidebar">
-        <a href="https://github.com/Gowthama-T?tab=repositories" target="_blank">
+        <a href="https://github.com/Gowthama-T/portfolio-website" target="_blank">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.1-4-1.1 0-.5-.2-1.9-.6-2.7.4-.1.9-1.3 0-1.3 0 0 .8-.1 1.7.6.5.2.9.5 1.3.8.4.2.9.4 1.3.4.6-.4 1.3-.9 2-1.2-.7-.7-1.7-.9-2.9-.9 0-.3.1-.7.3-1 .6-.6 1.8-.7 2.9-.4v-1.2c0-.2.1-.4.4-.5 1.3-.3 2.8-.3 4.3 0 .3.1.4.3.4.5v1.2c1.1-.3 2.3-.2 2.9.4.2.3.3.7.3 1-.7.3-1.4.5-2.9.9.7.3 1.3.8 2 1.2.4 0 .9-.2 1.3-.4.4-.3.8-.6 1.3-.8.9-.7 1.7-.6 1.7.6 0 .9-.5 1.3-.1 1.3-.4.8-.6 1.6-.6 2.7 0 1-.7 3.1 4 1.1v2.1c0 .3.2.7.8.6A12.13 12.13 0 0 0 12 .3z"/></svg>
         </a>
         <a href="https://linkedin.com/in/gowthama-t" target="_blank">
@@ -426,8 +434,32 @@
       <div class="container mx-auto px-4">
         <div class="card max-w-3xl mx-auto">
           <p class="text-lg text-center">
-            I'm Gowthama T, a motivated <b>MCA</b> graduate with foundational skills in<b> C programming, Python, and web development using HTML, CSS, and Bootstrap.</b> Experienced in working with<b>MySQL</b>  databases and version control using <b>GitHub</b>. Quick learner with strong adaptability and a passion for building responsive and user-friendly web solutions.
+            I'm Gowthama T, a passionate data analyst with a knack for uncovering insights that drive decisions. With expertise in business intelligence and data analytics, I specialize in transforming complex data into actionable strategies. My journey includes freelancing, academic excellence, and hands-on projects in web development and data visualization.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <h2 class="section-title" style="color: #37474f;">Experience</h2>
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="card">
+            <svg class="w-8 h-8 text-1a237e mb-4 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-10a2 2 0 1 0 2 2 2 2 0 0 0-2-2z"/></svg>
+            <h3 class="text-lg font-semibold mb-2 text-center">Freelance Data Analyst</h3>
+            <p class="text-center">Crafted data-driven solutions for clients, leveraging tools like Tableau and Python.</p>
+          </div>
+          <div class="card" style="animation-delay: 0.2s;">
+            <svg class="w-8 h-8 text-1a237e mb-4 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h16v2H4zm0 4h16v12H4zm2 2v8h12v-8zm2 2h8v4H8z"/></svg>
+            <h3 class="text-lg font-semibold mb-2 text-center">Data Analytics Student</h3>
+            <p class="text-center">Honed skills in SQL, Excel, and data visualization through rigorous coursework.</p>
+          </div>
+          <div class="card" style="animation-delay: 0.4s;">
+            <svg class="w-8 h-8 text-1a237e mb-4 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm1-13h-2v6H7v2h6z"/></svg>
+            <h3 class="text-lg font-semibold mb-2 text-center">Web Development Intern</h3>
+            <p class="text-center">Developed an e-commerce platform with HTML, CSS, JS, and payment APIs.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -438,63 +470,61 @@
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           <div class="tool-card">
-            <div class="tool-icon">💻</div>
-            <span class="tool-name">C Programming</span>
+            <div class="tool-icon">📊</div>
+            <span class="tool-name">Tableau</span>
           </div>
           <div class="tool-card" style="animation-delay: 0.2s;">
             <div class="tool-icon">🐍</div>
             <span class="tool-name">Python</span>
           </div>
           <div class="tool-card" style="animation-delay: 0.4s;">
-            <div class="tool-icon">🌐</div>
-            <span class="tool-name">HTML</span>
+            <div class="tool-icon">📈</div>
+            <span class="tool-name">Excel</span>
           </div>
           <div class="tool-card" style="animation-delay: 0.6s;">
-            <div class="tool-icon">🎨</div>
-            <span class="tool-name">CSS</span>
+            <div class="tool-icon">🗄️</div>
+            <span class="tool-name">SQL</span>
           </div>
           <div class="tool-card" style="animation-delay: 0.8s;">
-            <div class="tool-icon">📱</div>
-            <span class="tool-name">Bootstrap</span>
-          </div>
-          <div class="tool-card" style="animation-delay: 1s;">
-            <div class="tool-icon">🗄️</div>
-            <span class="tool-name">MySQL</span>
-          </div>
-          <div class="tool-card" style="animation-delay: 1.2s;">
-            <div class="tool-icon">📚</div>
-            <span class="tool-name">GitHub</span>
-          </div>
-          <div class="tool-card" style="animation-delay: 1.4s;">
-            <div class="tool-icon">📝</div>
-            <span class="tool-name">Microsoft Word</span>
+            <div class="tool-icon">📋</div>
+            <span class="tool-name">Power BI</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Education -->
-    <section id="education" class="section">
-      <h2 class="section-title" style="color: #6a1b9a;">Education</h2>
-      <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="education-card">
-            <h3 class="text-lg font-semibold mb-2">Master of Computer Applications (MCA)</h3>
-            <p>Bangalore Institute of Technology, Bangalore<br>
-              <strong>Dec 2024 – Present</strong><br>
-              Advancing expertise in computer science, web development, and software engineering.
-            </p>
-          </div>
-          <div class="education-card" style="animation-delay: 0.2s;">
-            <h3 class="text-lg font-semibold mb-2">Bachelor of Computer Applications (BCA)</h3>
-            <p>Davangere University, Davangere<br>
-              <strong>July 2021 – Sep 2024</strong><br>
-              Specialized in computer applications, gaining skills in programming and data management.
-            </p>
-          </div>
-        </div>
+   <!-- Education -->
+<section id="education" class="section">
+  <h2 class="section-title" style="color: #6a1b9a;">Education</h2>
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="card">
+        <h3 class="text-lg font-semibold mb-2">SSLC</h3>
+        <p>Karnataka State Board<br>
+          <strong>Completed</strong> with <strong>84.64%</strong> in <b>2019</b>. Acquired foundational knowledge in core subjects, preparing for advanced studies.
+        </p>
       </div>
-    </section>
+      <div class="card" style="animation-delay: 0.2s;">
+        <h3 class="text-lg font-semibold mb-2">PUC</h3>
+        <p>Karnataka State Board<br>
+          <strong>Completed</strong> with <strong>83.33%</strong> in <b>2021</b>. Focused on science stream, building a strong academic base for technical education.
+        </p>
+      </div>
+      <div class="card" style="animation-delay: 0.4s;">
+        <h3 class="text-lg font-semibold mb-2">BCA</h3>
+        <p>Davangere University<br>
+          <strong>Completed</strong> with <strong>83.89%</strong> in <b>2024</b>. Specialized in computer applications, gaining skills in programming and data management.
+        </p>
+      </div>
+      <div class="card" style="animation-delay: 0.6s;">
+        <h3 class="text-lg font-semibold mb-2">MCA</h3>
+        <p>Bangalore Institute of Technology<br>
+          <strong>Currently Pursuing</strong>. Advancing expertise in computer science, data analytics, and software development.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Certifications -->
     <section id="certifications" class="section">
@@ -502,74 +532,80 @@
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="card">
-            <h3 class="text-lg font-semibold mb-2">TCS ION Career Edge - Young Professional</h3>
-            <p>Completed June 2023 - Aug 2024. Developed professional skills for career readiness, including communication, teamwork, and project management.</p>
+            <h3 class="text-lg font-semibold mb-2">Cisco Data Analytics Essentials</h3>
+            <p>Completed August 15, 2023. Mastered data analytics processes, including data collection, transformation, and visualization using Excel, SQL, and Tableau. Built and shared a project portfolio.</p>
+            <a href="Gowthama_Cisco-1.pdf" download class="mt-4 inline-block bg-1a237e text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-ff6e40 transition-colors">Download Certificate</a>
           </div>
           <div class="card" style="animation-delay: 0.2s;">
-            <h3 class="text-lg font-semibold mb-2">CISCO Data Analytics Essentials</h3>
-            <p>Completed May 2024 - June 2024. Mastered data analytics processes, including data collection, transformation, and visualization.</p>
+            <h3 class="text-lg font-semibold mb-2">Google Data Analytics</h3>
+            <p>Currently Pursuing. Developing expertise in deriving actionable insights from complex datasets through advanced analytics techniques.</p>
           </div>
           <div class="card" style="animation-delay: 0.4s;">
-            <h3 class="text-lg font-semibold mb-2">IBM Data Analytics Professional Certification</h3>
-            <p>June 2025 - Present. Developing expertise in data analytics and visualization techniques.</p>
+            <h3 class="text-lg font-semibold mb-2">Professional Certifications</h3>
+            <p>Earned Cisco Data Analytics Essentials (2023) and actively pursuing Google Data Analytics to enhance professional skills in business intelligence and data-driven decision-making.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="section">
-      <h2 class="section-title" style="color: #1565c0;">Projects</h2>
-      <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="project-card bg-white border border-gray-200 rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2 opacity-0" style="animation: fadeInUp 0.6s ease-out forwards;">
-            <div class="flex items-center mb-4">
-              <svg class="w-10 h-10 text-[#1a237e] mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M3 3h18v18H3zm2 2v14h14V5zm2 2h10v10H7z"/>
-              </svg>
-              <h3 class="text-xl font-semibold font-poppins text-[#1a237e]">E-Commerce Website Development</h3>
-            </div>
-            <p class="text-gray-700 text-base leading-relaxed mb-4">
-              Designed and developed a static e-commerce website using HTML, CSS, and JavaScript. Created responsive web pages with product listings, shopping cart UI, and basic navigation. Focused on user interface design and improving the visual appeal for an engaging user experience.
-            </p>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-sm text-gray-500 italic">Tech: HTML, CSS, JavaScript</span>
-              <a href="https://github.com/Gowthama-T?tab=repositories" target="_blank" class="inline-flex items-center bg-[#1a237e] text-white px-5 py-2 rounded-lg font-poppins font-semibold text-sm hover:bg-[#ff6e40] transition-all duration-300 shadow-md hover:shadow-lg">
-                <span>View Code</span>
-                <svg class="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm-1-13h2v4h4v2h-6z"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div class="project-card bg-white border border-gray-200 rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2 opacity-0" style="animation: fadeInUp 0.6s ease-out 0.2s forwards;">
-            <div class="flex items-center mb-4">
-              <svg class="w-10 h-10 text-[#1a237e] mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm-2-12h4v8h-4z"/>
-              </svg>
-              <h3 class="text-xl font-semibold font-poppins text-[#1a237e]">Personal Portfolio Development</h3>
-            </div>
-            <p class="text-gray-700 text-base leading-relaxed mb-4">
-              Developed a responsive personal portfolio website using HTML5, Tailwind CSS, and JavaScript to showcase projects and certifications. Implemented smooth animations and interactive UI elements to enhance user engagement across devices.
-            </p>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-sm text-gray-500 italic">Tech: HTML5, Tailwind CSS, JavaScript</span>
-              <a href="https://github.com/Gowthama-T?tab=repositories" target="_blank" class="inline-flex items-center bg-[#1a237e] text-white px-5 py-2 rounded-lg font-poppins font-semibold text-sm hover:bg-[#ff6e40] transition-all duration-300 shadow-md hover:shadow-lg">
-                <span>View Code</span>
-                <svg class="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm-1-13h2v4h4v2h-6z"/>
-                </svg>
-              </a>
-            </div>
-          </div>
+<!-- Projects -->
+<section id="projects" class="section">
+  <h2 class="section-title" style="color: #1565c0;">Projects</h2>
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Personal Portfolio Project -->
+      <div class="project-card bg-white border border-gray-200 rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2 opacity-0" style="animation: fadeInUp 0.6s ease-out forwards;">
+        <div class="flex items-center mb-4">
+          <svg class="w-10 h-10 text-[#1a237e] mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M3 3h18v18H3zm2 2v14h14V5zm2 2h10v10H7z"/>
+          </svg>
+          <h3 class="text-xl font-semibold font-poppins text-[#1a237e]">Personal Portfolio Website</h3>
         </div>
-        <div class="text-center mt-10">
-          <a href="https://github.com/Gowthama-T?tab=repositories" class="bg-[#1a237e] text-white px-8 py-3 rounded-full font-semibold font-poppins text-lg hover:bg-[#ff6e40] transition-colors duration-300 shadow-md hover:shadow-lg">
-            Explore More Projects!
+        <p class="text-gray-700 text-base leading-relaxed mb-4">
+          Developed a responsive, modern portfolio website to professionally showcase skills, projects, and credentials. Utilized HTML, Tailwind CSS, and JavaScript for a sleek, user-friendly design with dynamic animations.
+        </p>
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-sm text-gray-500 italic">Tech: HTML, Tailwind CSS, JavaScript</span>
+          <a href="https://gowthama-t.github.io/portfolio-website/index.html" target="_blank" class="inline-flex items-center bg-[#1a237e] text-white px-5 py-2 rounded-lg font-poppins font-semibold text-sm hover:bg-[#ff6e40] transition-all duration-300 shadow-md hover:shadow-lg">
+            <span>View Live</span>
+            <svg class="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm-1-13h2v4h4v2h-6z"/>
+            </svg>
           </a>
         </div>
       </div>
-    </section>
+
+      <!-- Customer Segmentation Project -->
+      <div class="project-card bg-white border border-gray-200 rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2 opacity-0" style="animation: fadeInUp 0.6s ease-out 0.2s forwards;">
+        <div class="flex items-center mb-4">
+          <svg class="w-10 h-10 text-[#1a237e] mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm-2-12h4v8h-4z"/>
+          </svg>
+          <h3 class="text-xl font-semibold font-poppins text-[#1a237e]">Customer Segmentation Analysis</h3>
+        </div>
+        <p class="text-gray-700 text-base leading-relaxed mb-4">
+          Engineered a data-driven solution to segment mall customers by age, income, and spending score using K-Means clustering in Python, with interactive Tableau dashboards to inform strategic marketing decisions.
+        </p>
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-sm text-gray-500 italic">Tech: Python, Tableau, Seaborn</span>
+          <a href="https://github.com/Gowthama-T/portfolio-website" target="_blank" class="inline-flex items-center bg-[#1a237e] text-white px-5 py-2 rounded-lg font-poppins font-semibold text-sm hover:bg-[#ff6e40] transition-all duration-300 shadow-md hover:shadow-lg">
+            <span>View Code</span>
+            <svg class="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm-1-13h2v4h4v2h-6z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-10">
+      <a href="https://github.com/Gowthama-T/portfolio-website" class="bg-[#1a237e] text-white px-8 py-3 rounded-full font-semibold font-poppins text-lg hover:bg-[#ff6e40] transition-colors duration-300 shadow-md hover:shadow-lg">
+        Explore More Projects!
+      </a>
+    </div>
+  </div>
+</section>
 
     <!-- Contact -->
     <section id="contact" class="section">
@@ -582,11 +618,15 @@
           <div class="postcard-body">
             <div class="contact-item">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              <span><strong>Location:</strong> Bangalore, India</span>
+              <span><strong>Location:</strong>Bangalore, India</span>
             </div>
             <div class="contact-item">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
               <span><strong>Email:</strong> gowthamat634@gmail.com</span>
+            </div>
+            <div class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm7 16H5V5h14v14z"/></svg>
+              <span><strong>Phone:</strong> +91 9164893804</span>
             </div>
             <div class="contact-item">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.79z"/></svg>
@@ -594,7 +634,7 @@
             </div>
             <div class="contact-item">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.1-4-1.1 0-.5-.2-1.9-.6-2.7.4-.1.9-1.3 0-1.3 0 0 .8-.1 1.7.6.5.2.9.5 1.3.8.4.2.9.4 1.3.4.6-.4 1.3-.9 2-1.2-.7-.7-1.7-.9-2.9-.9 0-.3.1-.7.3-1 .6-.6 1.8-.7 2.9-.4v-1.2c0-.2.1-.4.4-.5 1.3-.3 2.8-.3 4.3 0 .3.1.4.3.4.5v1.2c1.1-.3 2.3-.2 2.9.4.2.3.3.7.3 1-.7.3-1.4.5-2.9.9.7.3 1.3.8 2 1.2.4 0 .9-.2 1.3-.4.4-.3.8-.6 1.3-.8.9-.7 1.7-.6 1.7.6 0 .9-.5 1.3-.1 1.3-.4.8-.6 1.6-.6 2.7 0 1-.7 3.1 4 1.1v2.1c0 .3.2.7.8.6A12.13 12.13 0 0 0 12 .3z"/></svg>
-              <span><strong>GitHub:</strong> <a href="https://github.com/Gowthama-T?tab=repositories">Explore More Projects!</a></span>
+              <span><strong>GitHub:</strong> <a href="https://github.com/Gowthama-T/portfolio-website">Explore More Projects!</a></span>
             </div>
           </div>
         </div>
@@ -602,16 +642,17 @@
     </section>
   </main>
 
-  <footer class="footer bg-gradient-to-r from-blue-900 via-gray-800 to-blue-900 text-white py-6 animate-fade-in-up">
-    <div class="container mx-auto px-4 text-center space-y-2">
-      <p class="text-sm transition duration-300 hover:text-blue-400">
-        © 2025 Gowthama T. All Rights Reserved.
-      </p>
-      <p class="text-sm transition duration-300 hover:text-blue-400">
-        Designed by Gowthama T
-      </p>
-    </div>
-  </footer>
+<footer class="footer bg-gradient-to-r from-blue-900 via-gray-800 to-blue-900 text-white py-6 animate-fade-in-up">
+  <div class="container mx-auto px-4 text-center space-y-2">
+    <p class="text-sm transition duration-300 hover:text-blue-400">
+      © 2025 Gowthama T. All Rights Reserved.
+    </p>
+    <p class="text-sm transition duration-300 hover:text-blue-400">
+      Designed by Gowthama T
+    </p>
+  </div>
+</footer>
+
 
   <script>
     // Smooth scrolling
